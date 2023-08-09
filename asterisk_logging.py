@@ -10,10 +10,10 @@ def freepbx_log_copy():
     dest_path = r'/mwdevops/home/json/'
     shutil.copy(src_path, dest_path)
 
-def system_log_copy():
-    src_path = r'/var/log/system.log'
-    dest_path = r'/mwdevops/home/json'
-    shutil.copy(src_path, dest_path)
+#def system_log_copy():
+#    src_path = r'/var/log/system.log'
+#    dest_path = r'/mwdevops/home/json'
+#    shutil.copy(src_path, dest_path)
 
 #Parses log entries into a list item called log_entries
 def parse_log_file(log_file_path):
