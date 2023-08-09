@@ -1,0 +1,3 @@
+[2023-06-23 22:01:50] [freepbx.INFO]: Redis enabled but not running, falling back to filesystem [Connection refused]. Either fix Redis or remove the php redis extension [] []
+[2023-06-23 22:01:50] [freepbx.INFO]: Depreciated Function module_getinfo detected in /var/www/html/admin/modules/cxpanel/functions.inc.php on line 71 [] []
+[2023-06-23 22:01:50] [freepbx.INFO]: Depreciated Function module_getinfo detected in /var/www/html/admin/modules/cxpanel/functions.inc.php on line 80 [] []
