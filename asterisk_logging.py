@@ -56,7 +56,7 @@ def convert_freepbx_log():
     log_json = json.dumps(log_entries, indent=4)
 
     # Save the JSON to a file or print it
-    with open("freepbx_output.json", "w") as json_file:
+    with open("full_output.json", "w") as json_file:
         json_file.write(log_json)
 
 #convert each line of JSON to its own file
@@ -66,6 +66,12 @@ def send_full_logs():
     with open('full.json', 'r') as file:
         for line in file:
             items.append(line.strip())
+
+        timestamp_keys = [key for key in items.keys() if re.match(r'timestamp\d+', key)]
+        timestamp_values = [items[key] for key in timestamp_keys]
+        sorted_timestamps = sorted(timestamp_values)
+        latest_timestamp = sorted_timestamps[-1]
+        print("Latest Timestamp:", latest_timestamp)
 # URL where you want to make the POST requests
     url = 'http://34.174.243.169:8080'
 
@@ -79,19 +85,5 @@ def send_full_logs():
         else:
             print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
 
-#def send_system_logs():
-#    items = 
 
-# URL where you want to make the POST requests
-    url = 'http://34.174.243.169:8080'
-
-# Iterate through the items and make POST requests
-    for item in items:
-        data = {'item': item}  # You can adjust the payload data as needed
-        response = requests.post(url, data=data)
-
-        if response.status_code == 200:
-            print(f"Successfully made POST request for {item}")
-        else:
-            print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
 
