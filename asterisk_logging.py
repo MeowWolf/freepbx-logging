@@ -11,7 +11,7 @@ def full_log_copy():
     shutil.copy(src_path, dest_path)
 
 
-full_log_copy()
+
 '''
 #Parses log entries into a list item called log_entries
 def parse_log_file(log_file_path):
