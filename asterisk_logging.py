@@ -10,6 +10,8 @@ def full_log_copy():
     dest_path = r'/home/mwdevops/json/full'
     shutil.copy(src_path, dest_path)
 
+
+full_log_copy()
 '''
 #Parses log entries into a list item called log_entries
 def parse_log_file(log_file_path):
