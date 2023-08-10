@@ -63,7 +63,7 @@ def convert_freepbx_log():
 # List of items you want to make POST requests for
 def send_full_logs():
     items = []
-    with open('full.json', 'r') as file:
+    with open('full_output.json', 'r') as file:
         for line in file:
             items.append(line.strip())
 
