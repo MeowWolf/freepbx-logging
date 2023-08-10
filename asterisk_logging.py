@@ -5,16 +5,12 @@ import requests
 import os
 
 #Function 1 Pull /var/log/asterisk.log file
-def freepbx_log_copy():
-    src_path = r'/var/log/freepbx.log'
-    dest_path = r'/mwdevops/home/json/'
+def full_log_copy():
+    src_path = r'/var/log/asterisk/full'
+    dest_path = r'/home/mwdevops/json/full'
     shutil.copy(src_path, dest_path)
 
-#def system_log_copy():
-#    src_path = r'/var/log/system.log'
-#    dest_path = r'/mwdevops/home/json'
-#    shutil.copy(src_path, dest_path)
-
+'''
 #Parses log entries into a list item called log_entries
 def parse_log_file(log_file_path):
     log_entries = []
@@ -78,7 +74,7 @@ def convert_system_log():
         json_file.write(log_json)
 
 #copy the stuff from the next file over here
-
+'''
 '''def send_asterisk_json():
     os.chdir('/mwdevops/home/json/asterisk/')
     headers = {
@@ -104,8 +100,8 @@ def send_freepbx_logs():
         else:
             print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
 
-def send_system_logs():
-    items = ['''how do I populate this list?''']
+#def send_system_logs():
+#    items = ['''how do I populate this list?''']
 
 # URL where you want to make the POST requests
     url = 'http://34.174.243.169:8080'
@@ -119,3 +115,4 @@ def send_system_logs():
             print(f"Successfully made POST request for {item}")
         else:
             print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
+'''
