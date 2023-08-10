@@ -81,11 +81,11 @@ def convert_system_log():
         'Content-type': 'application/json'
                }
     r = requests.post('https://302d63369ddc4072852f17a5a7b7771e.us-central1.gcp.cloud.es.io:443/search-twilio-english/_doc?pipeline=ent-search-generic-ingestion')'''
-
+'''
 #convert each line of JSON to its own file
 # List of items you want to make POST requests for
 def send_freepbx_logs():
-    items = ['''how do I populate this list?''']
+    items = []
 
 # URL where you want to make the POST requests
     url = 'http://34.174.243.169:8080'
@@ -101,7 +101,7 @@ def send_freepbx_logs():
             print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
 
 #def send_system_logs():
-#    items = ['''how do I populate this list?''']
+#    items = 
 
 # URL where you want to make the POST requests
     url = 'http://34.174.243.169:8080'
