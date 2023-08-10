@@ -9,7 +9,7 @@ def full_log_copy():
     src_path = r'/var/log/asterisk/full'
     dest_path = r'/home/mwdevops/json/full'
     shutil.copy(src_path, dest_path)
-    
+
 #Parses log entries into a list item called log_entries
 def parse_log_file(log_file_path):
     log_entries = []
@@ -47,9 +47,9 @@ def parse_log_line(log_line):
 
 #converts freepbx log file from above into JSON format (saves file in .json)
 def convert_freepbx_log():
-    parse_log_file("/mwdevops/home/JSON/freepbx/freepbx.log")
+    parse_log_file("/home/mwdevops/json/full/full")
     parse_log_line()
-    log_file_path = "/mwdevops/home/JSON/freebpx/freepbx.log"
+    log_file_path = "/home/mwdevops/json/full/full"
     log_entries = parse_log_file(log_file_path)
 
     # Convert the list of log entries to JSON
@@ -61,9 +61,11 @@ def convert_freepbx_log():
 
 #convert each line of JSON to its own file
 # List of items you want to make POST requests for
-def send_freepbx_logs():
+def send_full_logs():
     items = []
-
+    with open('full.json', 'r') as file:
+        for line in file:
+            items.append(line.strip())
 # URL where you want to make the POST requests
     url = 'http://34.174.243.169:8080'
 
