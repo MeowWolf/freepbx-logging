@@ -85,7 +85,7 @@ def send_full_logs():
         latest_timestamp = sorted_timestamps[-1]
         print("Latest Timestamp:", latest_timestamp)
 # URL where you want to make the POST requests
-    url = 'http://34.174.243.169:8080'
+    url = 'http://34.174.243.169:8080'  #depending on how much noise we can filter out it may be easier / make more sense to send data via ingest pipeline over LS
 
 # Iterate through the items and make POST requests
     for item in items:
