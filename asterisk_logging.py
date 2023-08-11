@@ -69,7 +69,7 @@ def convert_freepbx_log():
 
     # Save the JSON to a file or print it
     with open("full_output.json", "w") as json_file:
-        json_file.write(log_json)
+        json_file.write(full_json)
 
 #convert each line of JSON to its own file
 # List of items you want to make POST requests for
@@ -98,3 +98,8 @@ def send_full_logs():
             print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
 
 def log_send_loop():
+    run_full_log_copy_as_sudo()
+    parse_log_file()
+    parse_log_line()
+    convert_freepbx_log()
+    send_full_logs()
