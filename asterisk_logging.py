@@ -7,8 +7,15 @@ import subprocess
 
 #Function calls the copy_logs.py script to run the script as sudo
 def run_full_log_copy_as_sudo():
+    #needs a command to cd to whatever directory we save copy_logs.py to
+    #something like: 
+    #new_directory = "/path/to/directory/file.py"
+    #os.chdir(new_directory)
+    #add a print statmement for testing to confirm the cd worked
+    #print("New directory is:", os.getcwd())
+    
     sudo_command = "sudo python3 copy_logs.py"
-
+    
     try:
         subprocess.run(sudo_command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         print("Sudo command executed successfully.")
