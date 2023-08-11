@@ -3,13 +3,17 @@ import re
 import shutil
 import requests
 import os
+import subprocess
 
-#Function 1 Pull /var/log/asterisk.log file
-def full_log_copy():
-    src_path = r'/var/log/asterisk/full'
-    dest_path = r'/home/mwdevops/json/full'
-    shutil.copy(src_path, dest_path)
-
+#Function calls the copy_logs.py script to run the script as sudo
+def run_full_log_copy_as_sudo():
+    sudo_command = "sudo python3 copy_logs.py"
+    try:
+    subprocess.run(sudo_command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("Sudo command executed successfully.")
+except subprocess.CalledProcessError as e:
+    print("Error executing sudo command:", e)
+    
 #Parses log entries into a list item called log_entries
 def parse_log_file(log_file_path):
     log_entries = []
@@ -85,5 +89,4 @@ def send_full_logs():
         else:
             print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
 
-
-
+def log_send_loop():
