@@ -9,8 +9,8 @@ import subprocess
 def run_full_log_copy_as_sudo():
     #needs a command to cd to whatever directory we save copy_logs.py to
     #something like: 
-    #new_directory = "/path/to/directory/file.py"
-    #os.chdir(new_directory)
+    #change_directory = "/path/to/directory/file.py"
+    #os.chdir(change_directory)
     #add a print statmement for testing to confirm the cd worked
     #print("New directory is:", os.getcwd())
     
@@ -82,7 +82,7 @@ def send_full_logs():
         timestamp_keys = [key for key in items.keys() if re.match(r'timestamp\d+', key)]
         timestamp_values = [items[key] for key in timestamp_keys]
         sorted_timestamps = sorted(timestamp_values)
-        latest_timestamp = sorted_timestamps[-1]
+        global latest_timestamp = sorted_timestamps[-1]
         print("Latest Timestamp:", latest_timestamp)
 # URL where you want to make the POST requests
     url = 'http://34.174.243.169:8080'  #depending on how much noise we can filter out it may be easier / make more sense to send data via ingest pipeline over LS
@@ -98,6 +98,7 @@ def send_full_logs():
             print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
 
 def log_send_loop():
+    global latest_timestamp
     run_full_log_copy_as_sudo()
     parse_log_file()
     parse_log_line()
