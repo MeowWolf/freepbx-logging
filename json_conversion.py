@@ -35,7 +35,7 @@ def parse_log_line(log_line):
         process_id = match.group(3)
         source = match.group(4)
         message = match.group(5)
-        return timestamp, level, message
+        return timestamp, level, process_id, source, message
     else:
         # Return default values or handle the case where the line doesn't match the format
         return None, None, None, None, None
