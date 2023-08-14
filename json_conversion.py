@@ -13,6 +13,8 @@ def parse_log_file(log_file_path):
             log_entry = {
                 'timestamp': timestamp,
                 'level': level,
+                'process_id': process_id,
+                'source': process,
                 'message': message
             }
 
