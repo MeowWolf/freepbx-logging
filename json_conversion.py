@@ -55,5 +55,5 @@ log_file_path = "/home/mwdevops/json/full/full-20230727"
 log_entries = parse_log_file(log_file_path)
 log_json = json.dumps(log_entries, indent=4)
 with open("log_output.json", "w") as json_file:
-    #json_file.write(log_json)
+    json_file.write(log_json)
     print(log_entries[0])#create for each loop go separate out each log make a request call to that
