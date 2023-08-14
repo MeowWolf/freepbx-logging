@@ -47,7 +47,7 @@ def parse_log_line(log_line):
     # Save the JSON to a file or print it
     with open("log_output.json", "w") as json_file:
         json_file.write(log_json)'''
-log_file_path = "/Users/mstark/Downloads/freepbx.log"
+log_file_path = "/home/mwdevops/json/full/full"
 log_entries = parse_log_file(log_file_path)
 log_json = json.dumps(log_entries, indent=4)
 with open("log_output.json", "w") as json_file:
