@@ -3,7 +3,7 @@ import re
 
 def parse_log_file(log_file_path):
     log_entries = []
-
+    log_file_path = "/home/mwdevops/json/full/full-20230727"
     with open(log_file_path, 'r') as log_file:
         for line in log_file:
             # Parse the log line and extract relevant information
