@@ -1,3 +1,5 @@
+import requests
+
 def send_full_logs():
     items = []
     with open('log_output.json', 'r') as file:
