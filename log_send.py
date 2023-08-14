@@ -1,9 +1,9 @@
 def send_full_logs():
     items = []
-    with open('full_output.json', 'r') as file:
+    with open('log_output.json', 'r') as file:
         for line in file:
             items.append(line.strip())
-            
+
 # URL where you want to make the POST requests
     url = 'http://34.174.243.169:8080'  #depending on how much noise we can filter out it may be easier / make more sense to send data via ingest pipeline over LS
 
