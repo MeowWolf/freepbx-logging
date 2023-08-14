@@ -7,14 +7,14 @@ def parse_log_file(log_file_path):
     with open(log_file_path, 'r') as log_file:
         for line in log_file:
             # Parse the log line and extract relevant information
-            timestamp, level, message = parse_log_line(line)
+            timestamp, level, process_id, source, message = parse_log_line(line)
 
             # Create a dictionary for the log entry
             log_entry = {
                 'timestamp': timestamp,
                 'level': level,
                 'process_id': process_id,
-                'source': process,
+                'source': source,
                 'message': message
             }
 
