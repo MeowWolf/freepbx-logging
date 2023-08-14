@@ -16,3 +16,5 @@ def run_full_log_copy_as_sudo():
         print("Sudo command executed successfully.")
     except subprocess.CalledProcessError as e:
         print("Error executing sudo command:", e)
+
+run_rull_log_copy_as_sudo()
