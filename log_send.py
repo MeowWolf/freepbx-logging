@@ -21,3 +21,5 @@ def send_full_logs():
             print(f"Successfully made POST request for {item}")
         else:
             print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
+
+send_full_logs()
