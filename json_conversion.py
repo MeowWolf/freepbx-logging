@@ -24,17 +24,19 @@ def parse_log_file(log_file_path):
 
 def parse_log_line(log_line):
     # Define a regular expression pattern to match the log entry format
-    log_pattern = r'\[(.*?)\] \[(.*?)\]: (.*)'
+    log_pattern = r'\[(.*?)\] (\w+)\[(\d+)\] (.+?): (.*)'
     match = re.match(log_pattern, log_line)
 
     if match:
         timestamp = match.group(1)
         level = match.group(2)
-        message = match.group(3)
+        process_id = match.group(3)
+        source = match.group(4)
+        message = match.group(5)
         return timestamp, level, message
     else:
         # Return default values or handle the case where the line doesn't match the format
-        return None, None, None
+        return None, None, None, None, None
 
 # Main function
 '''if __name__ == "__main__":
