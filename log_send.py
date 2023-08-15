@@ -3,7 +3,7 @@ import json
 
 def send_full_logs():
     url = 'https://302d63369ddc4072852f17a5a7b7771e.us-central1.gcp.cloud.es.io:443/search-vocs/_doc?pipeline=ent-search-generic-ingestion'  #depending on how much noise we can filter out it may be easier / make more sense to send data via ingest pipeline over LS
-    api_key = 'aVh0Z3Q0a0JiYzE3Vzl1TW9fN006MEpWc0VDUFdSaVNiM1RGOHdEWFVKQQ=='
+    api_key = 'ZVhUdC1Za0Jack1ZRDc3Q2QwS1E6c0VXZEZ5cEhTNEd1U29YRE11aU53dw=='
     headers = {'Authorization': f'Bearer {api_key}'}
 
     items = []
