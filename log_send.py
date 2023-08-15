@@ -1,11 +1,14 @@
 import requests
+import json
 
 def send_full_logs():
     items = []
     with open('log_output.json', 'r') as file:
-        print (type(file))
-        for line in file:
-            items.append(line.strip())
+        # Open the JSON file and read its contents
+        json_data_list = json.load(file)
+
+        for item in json_data_list:
+            print(item)
 #make the line.strip an object.strip(not called that) to make sure we 
 # URL where you want to make the POST requests
     url = 'https://302d63369ddc4072852f17a5a7b7771e.us-central1.gcp.cloud.es.io:443/search-vocs/_doc?pipeline=ent-search-generic-ingestion'  #depending on how much noise we can filter out it may be easier / make more sense to send data via ingest pipeline over LS
