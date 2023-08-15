@@ -17,10 +17,10 @@ def send_full_logs():
         headers = {'Authorization': f'Bearer {api_key}'}
         response = requests.post(url, data=data)
 
-       ''' if response.status_code == 200:
-            print(f"Successfully made POST request for {item}")
-        else:
-            print(f"Failed to make POST request for {item}. Status code: {response.status_code}")'''
+       #if response.status_code == 200:
+            #print(f"Successfully made POST request for {item}")
+        #else:
+            #print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
         print(response)
 
 send_full_logs()
