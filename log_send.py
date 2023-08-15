@@ -15,12 +15,12 @@ def send_full_logs():
         data = {'item': item}  # You can adjust the payload data as needed
 
         headers = {'Authorization': f'Bearer {api_key}'}
-        response = requests.post(url, data=data)
+        #response = requests.post(url, data=data)
 
        #if response.status_code == 200:
             #print(f"Successfully made POST request for {item}")
         #else:
             #print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
-        print(response)
+        print(data)
 
 send_full_logs()
