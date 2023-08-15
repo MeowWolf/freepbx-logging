@@ -12,12 +12,13 @@ def send_full_logs():
         json_data_list = json.load(file)
 
         for item in json_data_list:
-            response = requests.post(url, headers=headers, data=item)
-            
-            if response.status_code == 200:
-                print(f"Successfully made POST request for {item}")
-            else:
-                print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
+            #response = requests.post(url, headers=headers, data=item)
+            print(type(item))
+            print(f"-- {item} --")
+            #if response.status_code == 200:
+                #print(f"Successfully made POST request for {item}")
+            #else:
+                #print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
 # Iterate through the items and make POST requests
     #for item in items:
         #data = {'item': item}  # You can adjust the payload data as needed
