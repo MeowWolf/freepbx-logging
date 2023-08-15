@@ -12,7 +12,7 @@ def send_full_logs():
         json_data_list = json.load(file)
 
         for item in json_data_list:
-            response = requests.post(url, data=item)
+            response = requests.post(url, headers=headers, data=item)
             
             if response.status_code == 200:
                 print(f"Successfully made POST request for {item}")
