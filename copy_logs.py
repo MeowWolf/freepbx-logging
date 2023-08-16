@@ -1,27 +1,29 @@
-import shutil
 import os
+import shutil
 from datetime import datetime
-import re
 
-def find_latest_full_log():
-    log_folder = '/var/log/asterisk/'
-    full_logs = [file for file in os.listdir(log_folder) if file.startswith('full-') and re.match(r'full-\d{4}/\d{2}/\d{2}$', file)]
-    sorted_logs = sorted(full_logs, key=lambda x: datetime.strptime(x.split('-')[-1]))
-    
-    if sorted_logs:
-        return os.path.join(log_folder, sorted_logs[0])
+log_directory = "/var/log/asterisk/"
+
+def find_log_file(log_directory, target_date):
+    target_filename = "full-{}".format(target_date.strftime('%Y%m%d'))
+    full_path = os.path.join(log_directory, target_filename)
+
+    if os.path.exists(full_path):
+        return full_path
     else:
         return None
 
-def full_log_copy():
-    src_path = find_latest_full_log()
-    print(src_path)
-    dest_path = '/home/mwdevops/json/full/'
-    
-    if src_path:
-        shutil.copy(src_path, dest_path)
-        print(f"Successfully copied {src_path} to {dest_path}")
-    else:
-        print("No suitable log file found.")
 
-full_log_copy()
+# Get the current date
+current_date = datetime.now().date()
+
+found_file = find_log_file(log_directory, current_date)
+dest_path = '/home/mwdevops/json/full/'
+
+if found_file:
+    #print("Log file found: " + found_file)
+    shutil.copy(found_file, dest_path)
+    print("Successfully copied {} to {}".format(found_file, dest_path))
+
+else:
+    print("Log file not found for the current date.")
