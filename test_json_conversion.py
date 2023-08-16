@@ -60,7 +60,7 @@ def parse_log_file(log_folder_path):
     with open("log_output.json", "w") as json_file:
         json_file.write(log_json)'''
 log_folder_path = "/home/mwdevops/json/full"
-    log_entries = parse_log_file(log_folder_path)
+     log_entries = parse_log_file(log_folder_path)
 
     # Convert the list of log entries to JSON
     log_json = json.dumps(log_entries, indent=4)
