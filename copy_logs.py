@@ -1,6 +1,7 @@
 import shutil
 import os
 from datetime import datetime
+import re
 
 def find_latest_full_log():
     log_folder = '/var/log/asterisk'
