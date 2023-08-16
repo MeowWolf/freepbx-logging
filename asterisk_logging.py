@@ -103,7 +103,7 @@ def send_full_logs():
 def log_send_loop():
     global latest_timestamp
 
-     while True:
+    while True:
         run_full_log_copy_as_sudo()
         log_entries = parse_log_file("/home/mwdevops/json/full/full")
         convert_freepbx_log()
