@@ -15,6 +15,7 @@ def find_latest_full_log():
 
 def full_log_copy():
     src_path = find_latest_full_log()
+    print(src_path)
     dest_path = '/home/mwdevops/json/full/'
     
     if src_path:
