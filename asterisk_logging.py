@@ -45,6 +45,8 @@ def parse_log_line(log_line):
 
 
 def parse_log_file(log_folder_path):
+    global latest_timestamp = None
+
     log_entries = []
 
     # List files in the log folder
@@ -69,7 +71,8 @@ def parse_log_file(log_folder_path):
             }
 
             log_entries.append(log_entry)
-
+            if log_entries:
+                latest_timestamp = log_entries[-1]['timestamp']
     return log_entries
 
 # Main function
@@ -123,6 +126,6 @@ def log_send_loop():
         send_full_logs(items)  # Pass the filtered entries to send_full_logs function
         print("full logs")
         # Sleep for a while before checking logs again
-        #time.sleep(600)  # Sleep for 10 minutes
+        time.sleep(600)  # Sleep for 10 minutes
 
 log_send_loop()
