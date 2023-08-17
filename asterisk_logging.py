@@ -4,6 +4,8 @@ import requests
 import os
 import subprocess
 
+def run_shell_script():
+    subprocess.run(["bash", "change_file_perms.sh"])
 #Function calls the copy_logs.py script to run the script as sudo
 def run_full_log_copy_as_sudo():
     #needs a command to cd to whatever directory we save copy_logs.py to
@@ -103,6 +105,7 @@ def send_full_logs():
 def log_send_loop():
     global latest_timestamp
     while True:
+        run_shell_script()
         run_full_log_copy_as_sudo()
         log_entries = parse_log_file("/home/mwdevops/json/full/")
         convert_freepbx_log()
