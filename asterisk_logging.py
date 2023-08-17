@@ -45,7 +45,7 @@ def parse_log_line(log_line):
 
 
 def parse_log_file(log_folder_path):
-    global latest_timestamp = None
+    global latest_timestamp == None
 
     log_entries = []
 
@@ -108,7 +108,7 @@ def send_full_logs():
                 print(f"Failed to make POST request for {item}. Status code: {response.status_code}")
 
 def log_send_loop():
-    global latest_timestamp
+    #global latest_timestamp
     while True:
         #run_shell_script()
         run_full_log_copy_as_sudo()
