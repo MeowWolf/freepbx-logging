@@ -22,7 +22,7 @@ dest_path = '/home/mwdevops/json/full/'
 
 if found_file:
     #print("Log file found: " + found_file)
-    shutil.copy(found_file, dest_path)
+    shutil.move(found_file, dest_path)
     print("Successfully copied {} to {}".format(found_file, dest_path))
 
 else:
