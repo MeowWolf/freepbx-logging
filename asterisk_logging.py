@@ -74,6 +74,7 @@ def parse_log_file(log_folder_path):
             log_entries.append(log_entry)
             if log_entries:
                 latest_timestamp = log_entries[-1]['timestamp']
+                print(latest_timestamp)
     return log_entries
 
 # Main function
