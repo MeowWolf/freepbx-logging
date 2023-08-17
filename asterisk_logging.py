@@ -118,7 +118,7 @@ def log_send_loop():
         #convert_freepbx_log()
 
         # Only send logs since the latest timestamp
-        if latest_timestamp:
+        if latest_timestamp is not None:
             filtered_entries = [entry for entry in log_entries if entry['timestamp'] > latest_timestamp]
         else:
             filtered_entries = log_entries
