@@ -5,7 +5,7 @@ import os
 import subprocess
 
 def run_shell_script():
-    script_name = change_file_perms.sh
+    script_name = "change_file_perms.sh"
     subprocess.run(["./" + script_name, "&"])
     print("ran")
 #Function calls the copy_logs.py script to run the script as sudo
