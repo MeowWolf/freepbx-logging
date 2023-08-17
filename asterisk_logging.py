@@ -45,7 +45,7 @@ def parse_log_line(log_line):
 
 
 def parse_log_file(log_folder_path):
-    #global latest_timestamp
+    global latest_timestamp
     latest_timestamp = None
 
     log_entries = []
