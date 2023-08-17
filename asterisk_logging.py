@@ -110,7 +110,7 @@ def log_send_loop():
         #run_shell_script()
         run_full_log_copy_as_sudo()
         log_entries = parse_log_file("/home/mwdevops/json/full/")
-        convert_freepbx_log()
+        #convert_freepbx_log()
 
         # Only send logs since the latest timestamp
         if latest_timestamp:
