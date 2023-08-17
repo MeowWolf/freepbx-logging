@@ -1,9 +1,11 @@
-def change_new_file_perms():
-    while True; do
-        inotifywait -e create -e moved_to -e moved_from -m /home/mwdevops/json/full |
-        while read path action file; do
-            if [ "$action" == "CREATE" ] || [ "$action" == "MOVED_TO" ]; then
-            chmod +w "$path/$file"
-            fi
-        done 
-    done
+#!/bin/bash
+
+# Specify the directory to monitor
+monitor_dir="/home/mwdevops/json/full/"
+
+# Start inotifywait to monitor the directory for close_write events
+inotifywait -m -e close_write --format "%w%f" "$monitor_dir" |
+while read -r file_path; do
+    chmod +w "$file_path"
+    echo "Changed permissions of $file_path to writable."
+done
