@@ -46,7 +46,6 @@ def parse_log_line(log_line):
         return None, None, None, None, None
 
 
-
 def parse_log_file(log_folder_path):
 
     log_entries = []
@@ -120,7 +119,7 @@ def log_send_loop():
         #convert_freepbx_log()
 
         # Only send logs since the latest timestamp
-        if latest_timestamp is not None:
+        if latest_timestamp:
             filtered_entries = [entry for entry in log_entries if entry['timestamp'] > latest_timestamp]
         else:
             filtered_entries = log_entries
