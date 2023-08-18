@@ -4,6 +4,9 @@ import requests
 import os
 import subprocess
 
+
+   
+latest_timestamp = ""
 #def run_shell_script():
     #script_name = "change_file_perms.sh"
     #subprocess.run(['./' + script_name, '&'], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -45,8 +48,6 @@ def parse_log_line(log_line):
 
 
 def parse_log_file(log_folder_path):
-    global latest_timestamp
-    latest_timestamp = ""
 
     log_entries = []
 
