@@ -117,7 +117,7 @@ def log_send_loop():
         #run_shell_script()
         run_full_log_copy_as_sudo()
         log_entries = parse_log_file("/home/mwdevops/json/full/")
-        print(log_entries)
+        #print(log_entries)
         
          # Only send logs since the latest timestamp
         filtered_entries = []
@@ -126,7 +126,7 @@ def log_send_loop():
             for entry in log_entries:
                 if entry['timestamp'] > latest_timestamp:
                     filtered_entries.append(entry)
-                    print(filtered_entries)
+                    print(latest_timestamp)
         #else:
             #filtered_entries = log_entries
 
