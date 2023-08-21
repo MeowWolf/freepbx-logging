@@ -84,7 +84,7 @@ print(log_entries[0])
 #convert each line of JSON to its own file
 # List of items you want to make POST requests for
 def send_full_logs():
-    url = 'https://34.174.243.169:8080'  #depending on how much noise we can filter out it may be easier / make more sense to send data via ingest pipeline over LS
+    url = 'http://34.174.243.169:8080'  #depending on how much noise we can filter out it may be easier / make more sense to send data via ingest pipeline over LS
     headers = {'Content-Type': 'application/json'}
 
     items = []
