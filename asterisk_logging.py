@@ -127,8 +127,8 @@ def log_send_loop():
                 if entry['timestamp'] > latest_timestamp:
                     filtered_entries.append(entry)
                     print(filtered_entries)
-        else:
-            filtered_entries = log_entries
+        #else:
+            #filtered_entries = log_entries
 
         items = json.dumps(filtered_entries)
 
