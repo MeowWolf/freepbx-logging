@@ -120,7 +120,7 @@ def log_send_loop():
         print(log_entries)
         
          # Only send logs since the latest timestamp
-        filtered_entries[]
+        filtered_entries = []
         
         if latest_timestamp:
             for entry in log_entries:
