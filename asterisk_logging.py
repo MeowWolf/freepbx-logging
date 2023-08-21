@@ -61,7 +61,7 @@ def parse_log_file(log_folder_path):
                 'source': source,
                 'message': message
             }
-            if log_entry['level'] == 'VERBOSE':
+            if log_entry['level'] == 'VERBOSE' or 'WARNING':
                 pass
             else:    
                 log_entries.append(log_entry)
