@@ -131,6 +131,6 @@ def log_send_loop():
         send_full_logs()  # Pass the filtered entries to send_full_logs function
         print("full logs")
         # Sleep for a while before checking logs again
-        time.sleep(600)  # Sleep for 10 minutes
+        time.sleep(10)  # Sleep for 10 minutes
 
 log_send_loop()
