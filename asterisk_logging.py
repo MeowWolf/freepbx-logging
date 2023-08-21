@@ -118,17 +118,16 @@ def log_send_loop():
         run_full_log_copy_as_sudo()
         log_entries = parse_log_file("/home/mwdevops/json/full/")
         print(log_entries)
-        #convert_freepbx_log()
-
-        # Only send logs since the latest timestamp
-      filtered_entries = []
-
+        
+         # Only send logs since the latest timestamp
+        filtered_entries[]
+        
         if latest_timestamp:
-           for entry in log_entries:
-              if entry['timestamp'] > latest_timestamp:
-                filtered_entries.append(entry)
+            for entry in log_entries:
+                if entry['timestamp'] > latest_timestamp:
+                    filtered_entries.append(entry)
         else:
-           filtered_entries = log_entries
+            filtered_entries = log_entries
 
         items = json.dumps(filtered_entries)
 
