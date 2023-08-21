@@ -126,7 +126,7 @@ def log_send_loop():
             for entry in log_entries:
                 if entry['timestamp'] > latest_timestamp:
                     filtered_entries.append(entry)
-                    print(entry)
+                    print(entry + "test")
         #else:
             #filtered_entries = log_entries
 
