@@ -126,12 +126,13 @@ def log_send_loop():
             for entry in log_entries:
                 if entry['timestamp'] > latest_timestamp:
                     filtered_entries.append(entry)
+                    print(filtered_entries)
         else:
             filtered_entries = log_entries
 
         items = json.dumps(filtered_entries)
 
-        send_full_logs()  # Pass the filtered entries to send_full_logs function
+        #send_full_logs()  # Pass the filtered entries to send_full_logs function
         print("full logs")
         # Sleep for a while before checking logs again
         time.sleep(10)  # Sleep for 10 minutes
