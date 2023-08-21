@@ -84,9 +84,8 @@ print(log_entries[0])
 #convert each line of JSON to its own file
 # List of items you want to make POST requests for
 def send_full_logs():
-    url = 'https://302d63369ddc4072852f17a5a7b7771e.us-central1.gcp.cloud.es.io:443/search-vocs/_doc?pipeline=ent-search-generic-ingestion'  #depending on how much noise we can filter out it may be easier / make more sense to send data via ingest pipeline over LS
-    api_key = 'ZVhUdC1Za0Jack1ZRDc3Q2QwS1E6c0VXZEZ5cEhTNEd1U29YRE11aU53dw=='
-    headers = {'Authorization': f'ApiKey {api_key}'}
+    url = 'https://34.174.243.169:8080'  #depending on how much noise we can filter out it may be easier / make more sense to send data via ingest pipeline over LS
+    headers = {'Content-Type': 'application/json'}
 
     items = []
     with open('log_output.json', 'r') as file:
