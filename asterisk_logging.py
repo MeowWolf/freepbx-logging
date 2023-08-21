@@ -121,10 +121,14 @@ def log_send_loop():
         #convert_freepbx_log()
 
         # Only send logs since the latest timestamp
+      filtered_entries = []
+
         if latest_timestamp:
-            filtered_entries = [entry for entry in log_entries if entry['timestamp'] > latest_timestamp]
+           for entry in log_entries:
+              if entry['timestamp'] > latest_timestamp:
+                filtered_entries.append(entry)
         else:
-            filtered_entries = log_entries
+           filtered_entries = log_entries
 
         items = json.dumps(filtered_entries)
 
