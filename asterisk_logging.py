@@ -123,9 +123,9 @@ def log_send_loop():
 
         items = json.dumps(filtered_entries)
 
-        #send_full_logs()  # Pass the filtered entries to send_full_logs function
-        print(items)
-        # Sleep for a while before checking logs again
+        send_full_logs()  # Pass the filtered entries to send_full_logs function
+        #print(items)
+        #Sleep for a while before checking logs again
         time.sleep(60)  # Sleep for 10 minutes
 
 log_send_loop()
