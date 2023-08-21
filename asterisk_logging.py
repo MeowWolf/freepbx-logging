@@ -61,7 +61,7 @@ def parse_log_file(log_folder_path):
                 'source': source,
                 'message': message
             }
-            if log_entry['level'] == 'VERBOSE' or 'WARNING':
+            if log_entry['level'] == 'VERBOSE' or log_entry['level'] == 'WARNING':
                 pass
             else:    
                 log_entries.append(log_entry)
@@ -123,7 +123,7 @@ def log_send_loop():
 
         items = json.dumps(filtered_entries)
 
-        send_full_logs()  # Pass the filtered entries to send_full_logs function
+        #send_full_logs()  # Pass the filtered entries to send_full_logs function
         print("full logs")
         # Sleep for a while before checking logs again
         time.sleep(2000)  # Sleep for 10 minutes
