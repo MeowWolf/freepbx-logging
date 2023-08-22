@@ -20,6 +20,14 @@ def run_full_log_copy_as_sudo():
     except subprocess.CalledProcessError as e:
         print("Error executing sudo command:", e)
 
+def call_run_log_copy_py():
+    code_call = "python3 run_log_copy.py"
+    
+    try:
+        subprocess.run(code_call, shell=True, check=True)
+        print("call_code ran successfully")
+    except subprocess.CalledPrcessError as e:
+        print("error executing command:", e)
 #Parses log entries into a list item called log_entries
 def parse_log_line(log_line):
     # Define a regular expression pattern to match the log entry format
@@ -107,13 +115,7 @@ def log_send_loop():
     while True:
         #run_shell_script()
         #run_full_log_copy_as_sudo()
-        print("before try block")
-        try:
-            subprocess.run(code_call, shell=True, check=True)
-            print("Hopefully I ran.")
-        except subprocess.CalledProcessError as e:
-            print("Error executing sudo command:", e)
-        print("after try block")
+        call_run_log_copy_py()
             
         log_entries = parse_log_file("/home/mwdevops/json/full/")
         #print(log_entries)
