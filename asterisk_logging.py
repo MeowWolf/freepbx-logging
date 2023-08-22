@@ -113,8 +113,8 @@ def send_full_logs():
 def log_send_loop():
     #global latest_timestamp
     while True:
-        #run_shell_script()
         #run_full_log_copy_as_sudo()
+        print("this should print before anything else runs")
         call_run_log_copy_py()
             
         log_entries = parse_log_file("/home/mwdevops/json/full/")
