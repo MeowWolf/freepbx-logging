@@ -8,7 +8,7 @@ import time
 
 
 latest_timestamp = ""
-code_call = "python3 run_log_copy.py"
+#code_call = "python3 run_log_copy.py"
 #Function calls the copy_logs.py script to run the script as sudo
 def run_full_log_copy_as_sudo():
     
@@ -24,7 +24,7 @@ def call_run_log_copy_py():
     code_call = "python3 run_log_copy.py"
     
     try:
-        subprocess.run(code_call, shell=True, check=True)
+        subprocess.run(code_call, shell=True, check=True, stdout=subprocess.TRUE, stderr=stubprocess.TRUE)
         print("call_code ran successfully")
     except subprocess.CalledPrcessError as e:
         print("error executing command:", e)
