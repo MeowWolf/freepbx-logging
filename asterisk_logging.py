@@ -117,26 +117,26 @@ def log_send_loop():
         print("this should print before anything else runs")
         call_run_log_copy_py()
             
-        log_entries = parse_log_file("/home/mwdevops/json/full/")
+        #log_entries = parse_log_file("/home/mwdevops/json/full/")
         #print(log_entries)
         
          # Only send logs since the latest timestamp
-        filtered_entries = []
+        #filtered_entries = []
         
-        if latest_timestamp:
-            print(latest_timestamp + "test")
-            for entry in log_entries:
-                if entry['timestamp'] > latest_timestamp:
-                    filtered_entries.append(entry)
+        #if latest_timestamp:
+            #print(latest_timestamp + "test")
+            #for entry in log_entries:
+                #if entry['timestamp'] > latest_timestamp:
+                    #filtered_entries.append(entry)
                 #print(latest_timestamp + "test")
         #else:
             #filtered_entries = log_entries
 
-        items = json.dumps(filtered_entries)
+        #items = json.dumps(filtered_entries)
 
-        send_full_logs()  # Pass the filtered entries to send_full_logs function
+        #send_full_logs()  # Pass the filtered entries to send_full_logs function
         #print(items)
         #Sleep for a while before checking logs again
-        time.sleep(60)  # Sleep for 10 minutes
+        #time.sleep(60)  # Sleep for 10 minutes
 
 log_send_loop()
