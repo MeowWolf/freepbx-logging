@@ -124,7 +124,7 @@ def log_send_loop():
 
         # Save the JSON to a file or print it
         with open("log_output.json", "w") as json_file:
-        json_file.write(log_json)
+            json_file.write(log_json)
          # Only send logs since the latest timestamp
         filtered_entries = []
         
