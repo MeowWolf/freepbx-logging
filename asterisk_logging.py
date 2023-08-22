@@ -26,7 +26,7 @@ def call_run_log_copy_py():
     try:
         subprocess.run(code_call, shell=True, check=True, stdout=subprocess.PIPE, stderr=stubprocess.PIPE, text=TRUE)
         print("call_code ran successfully")
-    except subprocess.CalledPrcessError as e:
+    except subprocess.CalledProcessError as e:
         print("error executing command:", e)
 #Parses log entries into a list item called log_entries
 def parse_log_line(log_line):
