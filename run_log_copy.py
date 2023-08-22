@@ -1,3 +1,5 @@
+import subprocess
+
 def run_full_log_copy_as_sudo():
     
     sudo_command = "sudo python3 copy_logs.py"
