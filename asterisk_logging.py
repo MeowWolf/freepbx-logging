@@ -110,8 +110,7 @@ def log_send_loop():
         try:
             subprocess.run(code_call, shell=True, check=True)
             print("Hopefully I ran.")
-        except
-            subprocess.CalledProcessError as e:
+        except subprocess.CalledProcessError as e:
             print("Error executing sudo command:", e)
             
         log_entries = parse_log_file("/home/mwdevops/json/full/")
