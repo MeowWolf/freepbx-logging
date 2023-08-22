@@ -22,7 +22,7 @@ def run_full_log_copy_as_sudo():
 
 def call_run_log_copy_py():
     code_call = "python3 run_log_copy.py"
-    
+    print("test")
     try:
         subprocess.run(code_call, shell=True, check=True, stdout=subprocess.PIPE, stderr=stubprocess.PIPE, text=TRUE)
         print("call_code ran successfully")
