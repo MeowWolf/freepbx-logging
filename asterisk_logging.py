@@ -111,7 +111,7 @@ def log_send_loop():
         print("Hopefully I ran.")
             
             
-            log_entries = parse_log_file("/home/mwdevops/json/full/")
+        log_entries = parse_log_file("/home/mwdevops/json/full/")
         #print(log_entries)
         
          # Only send logs since the latest timestamp
