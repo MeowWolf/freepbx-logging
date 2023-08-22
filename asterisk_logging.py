@@ -24,7 +24,7 @@ def call_run_log_copy_py():
     code_call = "python3 run_log_copy.py"
     print("test")
     try:
-        subprocess.run(code_call, shell=True, check=True, stdout=subprocess.PIPE, stderr=stubprocess.PIPE, text=TRUE)
+        subprocess.run(code_call, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=TRUE)
         print("call_code ran successfully")
     except subprocess.CalledProcessError as e:
         print("error executing command:", e)
