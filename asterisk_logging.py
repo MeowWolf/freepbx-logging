@@ -107,9 +107,12 @@ def log_send_loop():
     while True:
         #run_shell_script()
         #run_full_log_copy_as_sudo()
-        subprocess.run(code_call, shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        print("Hopefully I ran.")
-            
+        try:
+            subprocess.run(code_call, shell=True, check=True)
+            print("Hopefully I ran.")
+        except
+            subprocess.CalledProcessError as e:
+            print("Error executing sudo command:", e)
             
         log_entries = parse_log_file("/home/mwdevops/json/full/")
         #print(log_entries)
