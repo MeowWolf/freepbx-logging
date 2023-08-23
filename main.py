@@ -26,7 +26,7 @@ def log_copy(log_dir, target_date):
     full_path = os.path.join(log_dir, target_file)
 
     if os.path.exists(full_path):
-        shutil.copy(full_path, dest_path)
+        shutil.copy(full_path, target_file)
     else:
         print("Log file not found")
 
