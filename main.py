@@ -30,6 +30,7 @@ def log_copy(log_dir, target_date):
         return full_path
     else:
         print("Log file not found")
+        return None
 
 def parse_log_line(log_line):
 
@@ -97,8 +98,9 @@ def send_log(entry):
 
 def main():
     while True:
-        log_copy(log_directory, current_date)
+        file = log_copy(log_directory, current_date)
 
+        print("parse file: {}".format(parse_file))
         log_entries, latest_timestamp = parse_log_file(parse_file)
 
         log_json = json.dumps(log_entries, indent=4)
