@@ -19,6 +19,7 @@ dest_directory = os.getenv('DEST_DIR')
 
 # 
 current_date = datetime.now().date()
+latest_timestamp = ""
 
 def log_copy(log_dir, target_date):
     target_file = "full-{}".format(target_date.strftime('%Y%m%d'))
@@ -74,9 +75,9 @@ def parse_log_file(log_folder_path):
 
             else:
                 log_entries.append(log_entry)
-                latest_timestamp = timestamp
+                
 
-    return log_entries, latest_timestamp
+    return log_entries, timestamp
 
 
 def send_full_logs():
@@ -94,7 +95,7 @@ def send_full_logs():
 def send_log(entry):
     #print("Adding new log \n")
 
-    print(entry)
+    print(entry["timestamp"])
     #response = requests.port(URL, header=HEADERS, j)
 
 def main():
@@ -117,6 +118,7 @@ def main():
                 filtered_entries = log_entries
 
         print("\n\n\n\n\nlatest timestamp".format(latest_timestamp))
+        print(type(latest_timestamp))
         time.sleep(30) 
 
 if __name__ == "__main__":
