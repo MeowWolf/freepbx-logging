@@ -84,9 +84,9 @@ def send_full_logs():
         for item in json_data_list:
             response = requests.post(URL, headers=HEADERS, json=item)
             if response.status_code == 200:
-                print(f"Sucess {item}")
+                print("Sucess {}".format(item))
             else:
-                print(f"Failed POST for {item}. Status code: {response.status_code}")
+                print("Failed POST for {}. Status code: {}".format(item, response.status_code))
 
 def send_log(entry):
     print("Adding new log \n")
