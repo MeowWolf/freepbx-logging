@@ -110,9 +110,9 @@ def main():
             json_file.write(log_json)
 
         for entry in log_entries:
-            if entry['timestamp'] > latest_timestamp:
+            if entry['timestamp'] < latest_timestamp:
                 send_log(entry)
-                filtered_entries.append(entry)
+                #filtered_entries.append(entry)
             else:
                 filtered_entries = log_entries
 
