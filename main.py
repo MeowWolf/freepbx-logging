@@ -92,7 +92,7 @@ def send_full_logs():
                 print("Failed POST for {}. Status code: {}".format(item, response.status_code))
 
 def send_log(entry):
-    print("Adding new log \n")
+    #print("Adding new log \n")
 
     print(entry)
     #response = requests.port(URL, header=HEADERS, j)
@@ -116,7 +116,7 @@ def main():
             else:
                 filtered_entries = log_entries
 
-
+        print("\n\n\n\n\nlatest timestamp".format(latest_timestamp))
         time.sleep(30) 
 
 if __name__ == "__main__":
