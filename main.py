@@ -22,13 +22,12 @@ current_date = datetime.now().date()
 
 def log_copy(log_dir, target_date):
     target_file = "full-{}".format(target_date.strftime('%Y%m%d'))
-    #print(full_path)
     full_path = os.path.join(log_dir, target_file)
     
     if os.path.exists(full_path):
         shutil.copy(target_file, dest_directory)
         print("Log file copied to {}".format(target_file))
-        print(full_path)
+        print(target_file)
         return full_path
     else:
         print("Log file not found")
