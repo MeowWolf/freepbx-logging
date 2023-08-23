@@ -52,7 +52,7 @@ def parse_log_line(log_line):
 def parse_log_file(log_folder_path):
     log_entries = []
 
-    log_files = [file for file in os.listdir(log_folder_path) if file.startswitch('full-')]
+    log_files = [file for file in os.listdir(log_folder_path) if file.startswith('full-')]
     sorted_log_files = sorted(log_files, key=lambda x: x.split('-')[-1])
 
     latest_log_file = sorted_log_files[-1]
